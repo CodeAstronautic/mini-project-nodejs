@@ -60,8 +60,8 @@ let mailTransporter = nodemailer.createTransport({
 	port: 587,
 	secure: false,
 	auth: { 
-		user: 'pm.globaliasoft@gmail.com', 
-		pass: 'Password123#'
+		user: '######@gmail.com', 
+		pass: '@@@@'
 	} ,
 	tls: {
 		rejectUnauthorized: false
