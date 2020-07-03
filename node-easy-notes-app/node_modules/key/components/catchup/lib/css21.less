@@ -1,0 +1,32 @@
+/**
+ * Catchup v1.0.0
+ *
+ * Catchup is a small set of CSS3 and CSS 2.1 compatibility mixins
+ * for LESS.
+ *
+ * https://github.com/rowanmanning/catchup
+ *
+ * Copyright 2012, Rowan Manning
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ */
+
+// CSS 2.1 Compatibility Mixins
+// ============================
+//
+// Mixins in this file should be limited to just wrappers for basic CSS 2.1
+// functionality which is not consistent across browsers. Mixin names
+// should match CSS properties where possible.
+//
+
+// Display: Inline-Block
+// =====================
+//
+// Adds `display: inline-block;` support for Internet Explorer 6–7. Use
+// this rather than the native CSS property when you need inline-block
+// elements.
+// 
+.inline-block () {
+    display: inline-block;
+    *display: inline; // Internet Explorer 6–7
+    *zoom: 1; // Internet Explorer 6–7
+}

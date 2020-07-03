@@ -1,0 +1,112 @@
+/**
+ * Catchup v1.0.0
+ *
+ * Catchup is a small set of CSS3 and CSS 2.1 compatibility mixins
+ * for LESS.
+ *
+ * https://github.com/rowanmanning/catchup
+ *
+ * Copyright 2012, Rowan Manning
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ */
+
+// CSS3 Mixins
+// ===========
+//
+// Mixins in this file should be limited to just wrappers for basic CSS3
+// functionality. Mixin names should match CSS3 properties. Utilities
+// which *wrap* CSS3 functionality in a different API belong in a
+// different library :)
+//
+
+// Border-Radius
+// =============
+//
+// Specify a consistent border-radius like this:
+//
+//     .border-radius(10px);
+//
+// Or different radii for each corner:
+//
+//     .border-radius(15px 10px 5px 0);
+//
+.border-radius (@radius) {
+    -webkit-border-radius: @radius; // Safari 3-4
+       -moz-border-radius: @radius; // Firefox 1-3.6
+            border-radius: @radius; // W3C standard
+}
+
+// Box-Shadow
+// ==========
+//
+// For a single shadow, you can pass in arguments directly:
+//
+//     .box-shadow(0 5px 5px #f00);
+//
+// For multiple shadows, you'll need to use a workaround to fix the odd
+// argument handling in LESS:
+//
+//     @shadows: 0 0 5px #f00, inset 0 0 5px #0f0;
+//     .box-shadow(@shadows);
+//
+// You can also remove shadows with this mixin like so:
+//
+//     .box-shadow(none);
+//
+.box-shadow (@box-shadow) {
+    -webkit-box-shadow: @box-shadow; // Safari 3-4
+       -moz-box-shadow: @box-shadow; // Firefox 3.5-3.6
+            box-shadow: @box-shadow; // W3C standard
+}
+
+// Box-Sizing
+// ==========
+//
+// Specify box-sizing like this:
+//
+//     .box-sizing(border-box);
+//
+.box-sizing (@box-sizing) {
+    -webkit-box-sizing: @box-sizing; // Safari 3.1–5.0
+       -moz-box-sizing: @box-sizing; // Firefox 2+
+            box-sizing: @box-sizing; // W3C standard
+}
+
+// Opacity
+// =======
+//
+// Specify opacity like this:
+//
+//     .opacity(.5);
+//
+.opacity (@opacity) {
+    @filter: ~`"alpha(opacity=" + ("@{opacity}" * 100) + ")"`;
+    -ms-filter: @filter; // Internet Explorer 6–7
+        filter: @filter; // Internet Explorer 8
+    opacity: @opacity; // W3C standard
+}
+
+// Transition
+// ==========
+//
+// For a single transition, you can pass in arguments directly:
+//
+//     .transition(all .5s);
+//
+// For multiple transitions, you'll need to use a workaround to fix the
+// odd argument handling in LESS:
+//
+//     @transitions: background-color .5s, padding 1s;
+//     .transition(@transitions);
+//
+// You can also remove transitions with this mixin like so:
+//
+//     .transition(none);
+//
+.transition (@transition) {
+    -webkit-transition: @transition; // Safari 3.2+
+       -moz-transition: @transition; // Firefox 4+
+        -ms-transition: @transition; // Internet Explorer 10
+         -o-transition: @transition; // Opera 10.5+
+            transition: @transition; // W3C standard
+}
