@@ -25,7 +25,7 @@
     "filetype": "^0.1.0",
     "helper": "0.0.13",
     "image-js": "^0.21.9",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "key": "^0.1.11",
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.9.20",
